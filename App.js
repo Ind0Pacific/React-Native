@@ -1,14 +1,18 @@
-import { StatusBar, useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import { useState } from "react";
+import { StyleSheet, Text, View, Button, TextInput, StatusBar } from "react-native";
 
 export default function App() {
-   const [enteredGoalText , setEnteredGoalText] = useState('')
+  const [enteredGoalText, setEnteredGoalText] = useState("");
+  const [Goals, setGoals] = useState([]);
 
   function goalInputHandler(enteredText) {
     setEnteredGoalText(enteredText);
   }
-  function addGoalHandler() {}
 
+  function addGoalHandler() {
+    setGoals((currentGoal) => [...currentGoal, enteredGoalText]);
+    setEnteredGoalText("");
+  }
 
   return (
     <View style={styles.appContainer}>
@@ -17,11 +21,16 @@ export default function App() {
           style={styles.textInput}
           placeholder="Your Goals"
           onChangeText={goalInputHandler}
+          value={enteredGoalText}
         />
         <Button title="Add Goals" onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
-        <Text>List of goals</Text>
+        {Goals.map((goal, index) => (
+          <Text key={index} style={styles.goalText}>
+            {goal}
+          </Text>
+        ))}
       </View>
     </View>
   );
@@ -51,5 +60,11 @@ const styles = StyleSheet.create({
   },
   goalsContainer: {
     flex: 10,
+  },
+  goalText: {
+    marginVertical: 4,
+    padding: 8,
+    backgroundColor: "#e2e2e2",
+    borderRadius: 6,
   },
 });
