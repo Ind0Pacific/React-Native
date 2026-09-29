@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 
-import GoalItem from "./components/goalItem";
-import GoalInput from "./components/goalInput";
+import GoalItem from "./components/GoalItem";
+import GoalInput from "./components/GoalInput";
 
 export default function App() {
   const [goals, setGoals] = useState([]);
@@ -16,8 +16,10 @@ export default function App() {
     ]);
   }
 
-  function deleteGoalHandler() {
-    console.log("DELETE");
+  function deleteGoalHandler(id) {
+    setGoals((currentGoals) => {
+      return currentGoals.filter((goal) => goal.id !== id);
+    });
   }
 
   return (
@@ -28,6 +30,7 @@ export default function App() {
           data={goals}
           renderItem={(itemData) => (
             <GoalItem
+              id={itemData.item.id}
               text={itemData.item.text}
               onDeleteItem={deleteGoalHandler}
             />
