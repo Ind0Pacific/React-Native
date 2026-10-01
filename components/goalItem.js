@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, Pressable } from "react-native";
+import { StyleSheet, View, Text, Pressable , Modal } from "react-native";
 
 function GoalItem(props) {
   return (
@@ -16,6 +16,7 @@ function GoalItem(props) {
         </View>
       </Pressable>
     </View>
+   
   );
 }
 
