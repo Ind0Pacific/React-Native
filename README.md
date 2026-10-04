@@ -19,4 +19,13 @@ A simple, lightweight React Native mobile application built with Expo that allow
 * [Expo](https://expo.dev/) - React Native development toolchain
 * [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Application logic
 
+## 🚀 Getting Started
 
+Follow these steps to set up and run the project on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+* [Node.js](https://nodejs.org/) (LTS version recommended)
+* [Git](https://git-scm.com/)
+* **Expo Go App** on your mobile device ([Android](https://play.google.com/store/apps/details?id=host.exp.exponent) / [iOS](https://apps.apple.com/app/expo-go/id982107779)) or an emulator configured.
