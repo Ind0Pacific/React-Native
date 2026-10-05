@@ -17,13 +17,13 @@ function GoalInput(props) {
 
   function addGoalHandler() {
     props.onAddGoal(enteredGoalText);
-    setEnteredGoalText("");
+    setEnteredGoalText(require('../assets/images/goal.png'));
   }
 
   return (
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
-        <Image/>
+        <Image style={styles.image} source={require('../assets/images/goal.png')}/>
         <TextInput
           style={styles.textInput}
           placeholder="Your Goal"
@@ -61,6 +61,11 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     width: "100%",
     padding: 12,
+  },
+  image:{
+    width: 100,
+    height: 100,
+    margin: 20
   },
   buttonContainer: {
     marginTop: 16,
